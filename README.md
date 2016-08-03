@@ -83,6 +83,6 @@ rfc = RandomForestClassifier(n_estimators=5, random_state=1, max_features=None)
 ### Outputs
 - `datasetGet.py` produces training_seqs.txt, validation_seqs.txt, testing_seqs.txt, training_groupings.txt, validation_groupings.txt, testing_groupings.txt or all_seqs.txt, all_groupings.txt depending on preparation mode
 - `evolve.py` produces an HTML interactive _Plotly_ graph of each chromosome model of each genetic algorithm generation by fitness, with the ids and fitness as annotation. The program also produces a confusion matrix and ROC curve if using cross-validation or two confusion matrices if using held-out data
-- if the HTML graphs do not automatically load - append the url (e.g. https://github.com/MatthewCarse/evolve/blob/master/Sample%20outputs/CV/6fold_cv_roc.html) to http://htmlpreview.github.io/? to view
+- If the HTML graphs do not automatically load - append the url (e.g. https://github.com/MatthewCarse/evolve/blob/master/Sample%20outputs/CV/6fold_cv_roc.html) to http://htmlpreview.github.io/? to view
 https://htmlpreview.github.io/?https://github.com/MatthewCarse/evolve/blob/master/Sample%20outputs/CV/6fold_cv_roc.html
 
