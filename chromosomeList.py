@@ -16,7 +16,7 @@ Created on Sun Jul 03 2016
 #@ of a chromosome being picked for recombination dependent upon its fitness. 
 #@ The new and retained population of chromosomes are sorted and assessed to determine whether
 #@ any of the stopping criteria are met: fitness threshold, lack of diversity, lack of progress.
-#@ If any criterion is met, an html graph is produced using plotly and the program quits. 
+#@ If any criterion is met, an html graph is produced using plotly and the program quits.  
 
 
 from machineLearning import machineLearning
