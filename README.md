@@ -1,4 +1,4 @@
-# evolve
+# :hatching_chick: evolve :hatched_chick:
 ##Genetic algorithm for heuristic optimisation of machine-learning classification of protein sequences
 
 The .py scripts above contain two separate programs:
