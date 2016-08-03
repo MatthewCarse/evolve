@@ -16,7 +16,9 @@ The dataset acquisition program is called through the command line, taking:
 - -m/--mode argument (split or cv) to determine which files are produced - split=training/validation/testing, cv=all
 ```
 python datasetGet.py -f "Combined ids.txt" -d , -g 386,410,393 -m split
+```
 
+```
 Files:
 datasetGet.py
 query.py
@@ -26,7 +28,9 @@ The genetic algorithm program `evolve.py` is likewise called through the command
 - -m/--mode (split or cv) for the program to be run with training set used to fit the machine-learning models, the validation set for validation of these models, and the testing set as held-out data for evaluation of the highest-scoring model following running of the genetic algorithm. The cv option is for cross-validation in which the whole dataset is used for training and validation, with different sequences taken for each fold. The program must be run from the directory containing the sequence/groupings files, allowing a relative path to the python script.
 ```
 python evolve.py -m cv
+```
 
+```
 Files:
 chromosome.py
 chromosomeList.py
