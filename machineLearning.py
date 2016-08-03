@@ -11,6 +11,8 @@ Created on Tue Jun 07 2016
 #@ and testing datasets.
 #@ The class is also responsible for reading in groupings for model generation and prediction
 #@ validation. The prediction validation (fitness) can be accuracy, precision, recall or f-statistic.
+#@ Outputs HTML confusion matrices for split mode (lda and rfc on held-out data) and confusion matrix (lda)
+#@ and ROC curve for cross-validation.
 
 import numpy, os
 import vpGenList as vpGenList
