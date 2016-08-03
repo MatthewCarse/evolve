@@ -265,7 +265,6 @@ class machineLearning:
         from sklearn.metrics import roc_curve, auc
         from sklearn.preprocessing import label_binarize
         from sklearn.multiclass import OneVsRestClassifier
-        from scipy import interp
         from plotly.graph_objs import Scatter
         
         cv = KFold(len(trainGroupings)+1, n_folds=6)
@@ -305,7 +304,7 @@ class machineLearning:
             
             mean_tpr = numpy.zeros_like(all_fpr)
             for i in range(n_classes):
-                mean_tpr += interp(all_fpr, fpr[i], tpr[i])
+                mean_tpr += numpy.interp(all_fpr, fpr[i], tpr[i])
                 
             mean_tpr /= n_classes
             
