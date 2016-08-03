@@ -4,11 +4,11 @@ Created on Mon May 23 12:44:34 2016
 
 @author: Matthew Carse
 """
-#@ Class used by randomiser.py to query UniProt with UniRef representative cluster id,
+#@ Class used by datasetGet.py to query UniProt with UniRef representative cluster id,
 #@ by way of xml, extracting the peptide sequence for the cluster
 #@ The object takes as parameters a dataset and the name of this dataset
 #@ The program uses the dataset name to write the appropriate file containing the sequences
-#@ The seed-randomised groupings are written to similarly named files space-separated
+#@ The seed-randomised groupings are written to similarly named files, space-separated
 
 import urllib2, os, xml
 from xml.dom import minidom
