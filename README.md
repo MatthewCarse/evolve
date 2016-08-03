@@ -1,5 +1,5 @@
 # evolve
-Genetic algorithm for heuristic optimisation of machine-learning classification of protein sequences
+##Genetic algorithm for heuristic optimisation of machine-learning classification of protein sequences
 
 The .py scripts above contain two separate programs:
 
