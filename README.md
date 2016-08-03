@@ -26,10 +26,10 @@ python evolve.py -m cv
 
 
 ### Parameters
-- `query.py` - change self.email to the user's email address for querying UniProt servers
-- `chromosomeList.py` - ```self.origLength``` = number of chromosomes [models] in population
-- `chromosomeList.py` - ```self.retLength``` = number of 'top' chromosomes (by fitness) kept for recombination
-- `chromosomeList.py` - ```self.vpGenNum``` = number of vpGen objects [6-feature sets] per model 
+- `query.py` - change `self.email` to the user's email address for querying UniProt servers
+- `chromosomeList.py` - `self.origLength` = number of chromosomes [models] in population
+- `chromosomeList.py` - `self.retLength` = number of 'top' chromosomes (by fitness) kept for recombination
+- `chromosomeList.py` - `self.vpGenNum` = number of vpGen objects [6-feature sets] per model 
 - `chromosomeList.py` - stopping criterion - stops program if the top 10 models reach an average fitness of 1.0
 ``` python
 while (sum(c.fitness for c in chromosomes[0:10]))/10 < 1.0:
@@ -55,8 +55,8 @@ predicted = cross_validation.cross_val_predict(clf, tCList, trainGroupings, cv=3
 - `machineLearning.py` - if using split mode, the highest-scoring model is evaluated on the test set using random forest classification with 5 estimators
 ```python 
 rfc = RandomForestClassifier(n_estimators=5, random_state=1, max_features=None)
-``` 
-- `mutateRecombine.py` - ```self.p``` = mutation probability (1-p) e.g. p=0.98, mutation rate = 1/50
+```
+- `mutateRecombine.py` - `self.p` = mutation probability (1-p) e.g. p=0.98, mutation rate = 1/50
 
 ### Outputs
 - `datasetGet.py` produces training_seqs.txt, validation_seqs.txt, testing_seqs.txt, training_groupings.txt, validation_groupings.txt, testing_groupings.txt or all_seqs.txt, all_groupings.txt depending on preparation mode
