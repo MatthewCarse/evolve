@@ -4,6 +4,10 @@ Created on Sun May 15 2016
 
 @author: Matthew Carse
 """
+#@ Uses virtual potentials (Aires-de-Sousa, J., & Aires-de-Sousa, L. (2003). Representation of DNA sequences 
+#@ with virtual potentials and their processing by (SEQREP) Kohonen self-organizing maps. Bioinformatics, 19(1), 30-36.) 
+#@ to numerically represent a protein sequence through the relationship (abundance and proximity) of two amino acid residues.
+
 #@ The vpGen class takes an anchor and a chain residue and creates an identifier from these residues.
 #@ When the featureGen function is called with an appropriate peptide sequence, the virtual potential for the
 #@ sequence is calculated using the anchor and chain residues. The virtual potential is displayed as a 6-item 
