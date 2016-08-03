@@ -24,6 +24,10 @@ The genetic algorithm program `evolve.py` is likewise called through the command
 python evolve.py -m cv
 ```
 
+### Required packages
+- [Scikit-learn] (http://scikit-learn.org/stable/)
+- [NumPy] (http://www.numpy.org/)
+- [Plotly] (https://plot.ly/python/getting-started/)
 
 ### Parameters
 - `query.py` - change `self.email` to the user's email address for querying UniProt servers
