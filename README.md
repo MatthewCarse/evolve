@@ -20,8 +20,8 @@ python datasetGet.py -f "Combined ids.txt" -d , -g 386,410,393 -m split
 
 ```
 Files:
-datasetGet.py
-query.py
+  datasetGet.py
+  query.py
 ```
 
 The genetic algorithm program `evolve.py` is likewise called through the command line, taking a singular argument:
@@ -32,14 +32,14 @@ python evolve.py -m cv
 
 ```
 Files:
-chromosome.py
-chromosomeList.py
-evolve.py
-machineLearning.py
-mutateRecombine.py
-seqRead.py
-vpGen.py
-vpGenList.py
+  chromosome.py
+  chromosomeList.py
+  evolve.py
+  machineLearning.py
+  mutateRecombine.py
+  seqRead.py
+  vpGen.py
+  vpGenList.py
 ```
 
 ### Required packages
