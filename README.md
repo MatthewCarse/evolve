@@ -30,11 +30,32 @@ python evolve.py -m cv
 - `chromosomeList.py` - ```self.origLength``` = number of chromosomes [models] in population
 - `chromosomeList.py` - ```self.retLength``` = number of 'top' chromosomes (by fitness) kept for recombination
 - `chromosomeList.py` - ```self.vpGenNum``` = number of vpGen objects [6-feature sets] per model 
-- `chromosomeList.py` - stopping criterion - ```while (sum(c.fitness for c in chromosomes[0:10]))/10 < 1.0:``` - stops program if the top 10 models reach an average fitness of 1.0
-- `chromosomeList.py` - stopping criterion - ```sets = [c.ids for c in chromosomes[0:(len(chromosomes)/100)]]``` + ```if all(sets[0] == sets[i+1] for i in range((len(chromosomes)/100)-1)):``` - stops program if the top 1% of models all have the same ids (anchor-chain combinations) as diversity has been lost
-- `chromosomeList.py` - stopping criterion - ```meanFitness.append((sum(c.fitness for c in chromosomes[0:(len(chromosomes)/100)]))/(len(chromosomes)/100))``` + ```if self.gaPasses >= 2:``` + ```if meanFitness[self.gaPasses-1] == meanFitness[self.gaPasses-2]:``` - stops program if the mean fitness of the top 1% of models has not changed since the prior genetic algorithm generation
-- `machineLearning.py` - ```predicted = cross_validation.cross_val_predict(clf, tCList, trainGroupings, cv=3)``` - if run using cross-validation, uses 3 folds
-- `machineLearning.py` - ```rfc = RandomForestClassifier(n_estimators=5, random_state=1, max_features=None)``` - if using split mode, the highest-scoring model is evaluated on the test set using random forest classification with 5 estimators
+- `chromosomeList.py` - stopping criterion - stops program if the top 10 models reach an average fitness of 1.0
+``` python
+while (sum(c.fitness for c in chromosomes[0:10]))/10 < 1.0:
+``` 
+- `chromosomeList.py` - stopping criterion - stops program if the top 1% of models all have the same ids (anchor-chain combinations) as diversity has been lost
+``` python
+sets = [c.ids for c in chromosomes[0:(len(chromosomes)/100)]]
+
+if all(sets[0] == sets[i+1] for i in range((len(chromosomes)/100)-1)):
+``` 
+- `chromosomeList.py` - stopping criterion - stops program if the mean fitness of the top 1% of models has not changed since the prior genetic algorithm generation
+```python 
+meanFitness.append((sum(c.fitness for c in chromosomes[0:(len(chromosomes)/100)]))/(len(chromosomes)/100))
+
+if self.gaPasses >= 2:
+
+if meanFitness[self.gaPasses-1] == meanFitness[self.gaPasses-2]:
+``` 
+- `machineLearning.py` - if run using cross-validation, uses 3 folds 
+```python 
+predicted = cross_validation.cross_val_predict(clf, tCList, trainGroupings, cv=3)
+```
+- `machineLearning.py` - if using split mode, the highest-scoring model is evaluated on the test set using random forest classification with 5 estimators
+```python 
+rfc = RandomForestClassifier(n_estimators=5, random_state=1, max_features=None)
+``` 
 - `mutateRecombine.py` - ```self.p``` = mutation probability (1-p) e.g. p=0.98, mutation rate = 1/50
 
 ### Outputs
