@@ -8,13 +8,19 @@ Created on Wed May 18 14:12:48 2016
 """
 #@ Class to read in UniRef identifiers and randomise using seed for reproducibility.
 #@       !Uses UniRef cluster ids for representative sequence¡ e.g. UniRef90_Q587C9
+#@ If split mode:
 #@ Randomised dataset identifiers sectioned into training (60%), validation (30%) and testing (10%) datasets.
 #@ Sequence identifiers used to query UniProt and sequences downloaded and written to files with set names:
 #@       training_seqs.txt
 #@       validation_seqs.txt
 #@       testing_seqs.txt
+#@ If cv (cross-validation) mode:
+#@ Protein identifiers reproducibly randomised, used to query UniProt; sequences stored in:
+#@       all_seqs.txt
 #@ Command line input requires the full name of a file in the current working directory (including file type e.g. .txt)
 #@ Delimiter parameter is optional (default: \n)
+#@ Groupings parameter is mandatory, giving comma-separated total numbers of protein belonging to each class (e.g. 386,410,393)
+#@ Mode parameter is optional (default: split)
 
 import random, sys, getopt, os
 from query import query
