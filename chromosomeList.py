@@ -16,7 +16,7 @@ Created on Sun Jul 03 2016
 #@ of a chromosome being picked for recombination dependent upon its fitness. 
 #@ The new and retained population of chromosomes are sorted and assessed to determine whether
 #@ any of the stopping criteria are met: fitness threshold, lack of diversity, lack of progress.
-#@ If any criterium is met, an html graph is produced using plotly and the program quits. 
+#@ If any criterion is met, an html graph is produced using plotly and the program quits. 
 
 
 from machineLearning import machineLearning
@@ -93,7 +93,7 @@ class chromosomeList:
             # lack of chromosome diversity (all of the top 1% of chromosomes are identical)
             # lack of progression (the top 1% of chromosomes stay the same for two runs of the genetic algorithm)
               
-        ### STOPPING CRITERIUM TO BE CHANGED ###
+        ### STOPPING CRITERION TO BE CHANGED ###
         # run genetic algorithm until mean 1.0 f1 score for the top 10 chromosomes (both can be changed for a different
         # threshold or a different number of chromosomes)
         while (sum(c.fitness for c in chromosomes[0:10]))/10 < 1.0:
@@ -147,7 +147,7 @@ class chromosomeList:
             print "Time to convergence check: ", time.time()-gaStart
             
             
-            ### STOPPING CRITERIUM TO BE CHANGED ###
+            ### STOPPING CRITERION TO BE CHANGED ###
             # note time of convergence - if top 1% of chromosomes are identical then diversity has been lost
             # can change the percentage of chromosomes to check for diversity
             # produce a list of the top 1% of ids
@@ -165,7 +165,7 @@ class chromosomeList:
             
             # if ids are unique for recombination, change to use set of fitness in top 1%
             
-            ### STOPPING CRITERIUM TO BE CHANGED ###
+            ### STOPPING CRITERION TO BE CHANGED ###
             # append the mean fitness over the top 1% of chromosomes to a list in order to check performance
             # over previous genetic algorithm passes - if current performance is the same as the performance
             # from 1 pass ago, quit (the number of genetic algorithm passes over which there is no change can
