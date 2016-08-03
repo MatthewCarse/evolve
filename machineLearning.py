@@ -272,8 +272,10 @@ class machineLearning:
         fig = py.tools.make_subplots(shared_xaxes=True, shared_yaxes=True, print_grid=False)
         
         for index, (train, test) in enumerate(cv):
-            y = label_binarize(trainGroupings, classes=['0', '1', '2']) # change as required
-            n_classes = 3 # change as required
+            classes = list(set(trainGroupings))
+            classes.sort()
+            y = label_binarize(trainGroupings, classes=classes) 
+            n_classes = len(classes)
             
             trainL, testL = [e for e in train], [e for e in test]
             del trainL[-1] # delete last element otherwise too many
