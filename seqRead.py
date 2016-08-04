@@ -48,24 +48,24 @@ class seqRead:
                 elif not self.residueCheck(line.upper()):
                     print ('Sequence: {}\nContains non-amino acid code(s). Disregarding.').format(line)
                     raw_input("Press Enter to continue...")
-#                elif not res[0]:
-#                    print ('Sequence: {0}\nAppears to contain an overabundance (>25%) of residue {1}.').format(line.upper(),res[1])
-#                    var = 'd'
-#                    while str(var.lower().strip()) not in ['y', 'n', 'q']:
-#                        var = raw_input('Is this a nucleotide sequence? (y to include sequence / n to disregard sequence / q to quit)\n')
-#                    else:
-#                        if str(var.lower().strip()) == 'y':
-#                            d = {i: v.featureGen(line) for i, v in self.allvpGens.items()}
-#                            if dataset == "training_seqs.txt":
-#                                allTrainFSets.append(d)
-#                            elif dataset == "validation_seqs.txt":
-#                                allValidFSets.append(d)
-#                            elif dataset == "testing_seqs.txt":
-#                                allTestFSets.append(d)
-#                        elif str(var.lower().strip()) == 'n':
-#                            continue
-#                        else:
-#                            sys.exit()
+                elif not res[0]:
+                    print ('Sequence: {0}\nAppears to contain an overabundance (>25%) of residue {1}.').format(line.upper(),res[1])
+                    var = 'd'
+                    while str(var.lower().strip()) not in ['y', 'n', 'q']:
+                        var = raw_input('Is this a nucleotide sequence? (y to include sequence / n to disregard sequence / q to quit)\n')
+                    else:
+                        if str(var.lower().strip()) == 'y':
+                            d = {i: v.featureGen(line) for i, v in self.allvpGens.items()}
+                            if dataset == "training_seqs.txt":
+                                allTrainFSets.append(d)
+                            elif dataset == "validation_seqs.txt":
+                                allValidFSets.append(d)
+                            elif dataset == "testing_seqs.txt":
+                                allTestFSets.append(d)
+                        elif str(var.lower().strip()) == 'n':
+                            continue
+                        else:
+                            sys.exit()
                 else:
                     # variable d is a dictionary with the vpGen id as a key
                     # each of the 400 vpGen anchor-chain combinations is iterated through
